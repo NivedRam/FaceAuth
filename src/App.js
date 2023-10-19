@@ -1,24 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import CameraComponent from "./Pages/CameraComponent";
+import Pricing from "./Pages/Pricing";
+import Landing from "./Pages/LandingPage";
+import { BrowserRouter, Navigate, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Landing />} />
+        <Route path="/home" element={<CameraComponent />} />
+        <Route path="/pricing" element={<Pricing />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
